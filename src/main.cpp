@@ -13,11 +13,11 @@ int main(){
   //generate first half
   for(int i=0; i < 5; i++)
     for(int j=0; j < 2; j++)
-      mask[i][j]=rand()%2;
+      mask[i][j]=rand()%3;
 
   //generate middle part
   for(int i=0; i < 5; i++)
-    mask[i][2]=rand()%2;
+    mask[i][2]=rand()%3;
 
   //mirror the first half over the other
   for(int i=0; i < 5; i++)
@@ -25,13 +25,18 @@ int main(){
       mask[i][4-j]=mask[i][j];
 
   //start saving into image
-  sf::Color bg=sf::Color(50,100, 50), fg=sf::Color(100, 200, 0);
+
+  sf::Color colors[3];
+  colors[0] = sf::Color(155, 55, 55);//primary
+  colors[1] = sf::Color(55, 155, 55);//secondary
+  colors[2] = sf::Color(55, 55, 155);//accent
+
   sf::Image img;
   img.create(5*CELL_SIZE, 5*CELL_SIZE);
 
   for(int i=0; i < 5*CELL_SIZE; i++)
     for(int j=0; j < 5*CELL_SIZE; j++)
-      img.setPixel(i, j, mask[j/CELL_SIZE][i/CELL_SIZE] ? fg : bg);
+      img.setPixel(i, j, colors[mask[j/CELL_SIZE][i/CELL_SIZE]]);
 
   img.saveToFile("data/out.png");
 
