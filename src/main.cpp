@@ -14,11 +14,11 @@ int main(){
   //generate first half
   for(int i=0; i < CELL_COUNT; i++)
     for(int j=0; j < CELL_COUNT/2+1; j++)
-      mask[i][j]=rand()%3;
+      mask[i][j]=rand()%6;
 
   //generate middle part
   for(int i=0; i < CELL_COUNT; i++)
-    mask[i][CELL_COUNT/2+1]=rand()%3;
+    mask[i][CELL_COUNT/2+1]=rand()%6;
 
   //mirror the first half over the other
   for(int i=0; i < CELL_COUNT; i++)
@@ -27,10 +27,10 @@ int main(){
 
   //start saving into image
 
-  sf::Color colors[3];
-  colors[0] = sf::Color(255, 0, 0);//primary
-  colors[1] = sf::Color(0, 255, 0);//secondary
-  colors[2] = sf::Color(0, 0, 255);//accent
+  sf::Color colors[6] = {
+    sf::Color::Red, sf::Color::Blue, sf::Color::Green,
+    sf::Color::Yellow, sf::Color::Cyan, sf::Color::Magenta
+  };
 
   sf::Image img;
   img.create(CELL_COUNT*CELL_SIZE, CELL_COUNT*CELL_SIZE);
