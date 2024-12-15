@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
+#include "io.hpp"
 
 #define CELL_SIZE   84
 #define CELL_COUNT  7
