@@ -1,6 +1,7 @@
 #include "io.hpp"
 #include <fstream>
 #include <cstdio>
+#include <iostream>
 
 sf::Color* read_conf(char* file, int& cell_count, int& cell_size, int& colr_count){
   sf::Color* values;
@@ -11,7 +12,11 @@ sf::Color* read_conf(char* file, int& cell_count, int& cell_size, int& colr_coun
   int r, g, b;
   for(int iter=0; iter<colr_count; iter++){
     in.getline(hex_code, 8);
-    sscanf(hex_code, "#%02x%02x%02x", r, g, b);
+    std::clog<<'\n'<<hex_code;
+    sscanf(hex_code, "#%02x%02x%02x", &r, &g, &b);
+    std::clog<<'\n'<<r;
+    std::clog<<'\n'<<g;
+    std::clog<<'\n'<<b;
     values[iter].r = r;
     values[iter].g = g;
     values[iter].b = b;

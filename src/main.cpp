@@ -18,6 +18,9 @@ int main(){
   assign(cell_count, colr_count, mask);
   sf::Image avatar = from_mask(cell_count, cell_size, mask, colors, colr_count);
   avatar.saveToFile("data/img/out.png");
+  delete *mask;
+  delete mask;
+  delete colors;
   // int mask[CELL_COUNT][CELL_COUNT];
   // for(int i=0; i < CELL_COUNT*CELL_COUNT; i++)
   //   mask[i/CELL_COUNT][i%CELL_COUNT]=0;
