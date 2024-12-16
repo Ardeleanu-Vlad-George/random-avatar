@@ -1,10 +1,14 @@
 #include "comp.hpp"
+#include <cstdlib>
+#include <cstddef>
+#include <cstdio>
+#include <ctime>
 
 int** create(int size){
   int** result = new int*[size];
   *result = new int[size*size];
   for(int iter=0; iter < size; iter++)
-    result[iter] = result + iter*size;  
+    result[iter] = *result + iter*size;  
   return result;
 }
 

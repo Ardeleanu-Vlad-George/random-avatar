@@ -1,7 +1,7 @@
 #ifndef _IO_HPP_
 #define _IO_HPP_
 
-#include <SFML/Graphic.hpp>
+#include <SFML/Graphics.hpp>
 
 /**
   * Returns a C style array of colors, in the output parameters 
@@ -10,6 +10,6 @@
   * The first argument is the file from which these settings are 
   * read
 */
-sf::Color* read_conf(char*, int&, int&);
+sf::Color* read_conf(char*, int&, int&, int&);
 
 #endif//_IO_HPP_

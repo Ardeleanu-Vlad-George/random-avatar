@@ -7,7 +7,7 @@ sf::Color* read_conf(char* file, int& cell_count, int& cell_size, int& colr_coun
   std::ifstream in(file);
   in>>cell_count>>cell_size>>colr_count;
   values = new sf::Color[colr_count];
-  char* hex_code[8];
+  char hex_code[8];
   int r, g, b;
   for(int iter=0; iter<colr_count; iter++){
     in.getline(hex_code, 8);
