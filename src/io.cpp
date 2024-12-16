@@ -1,7 +1,6 @@
 #include "io.hpp"
 #include <fstream>
 #include <cstdio>
-#include <iostream>
 
 sf::Color* read_conf(char* file, int& cell_count, int& cell_size, int& colr_count){
   sf::Color* values;

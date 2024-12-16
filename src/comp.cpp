@@ -1,8 +1,5 @@
 #include "comp.hpp"
-#include <iostream>
 #include <cstdlib>
-#include <cstddef>
-#include <cstdio>
 #include <ctime>
 
 int** create(int size){
@@ -16,7 +13,9 @@ int** create(int size){
 void assign(int size, int limt, int **data){
   for(int iter=0; iter < size*size; iter++)
     iter[*data] = 0;
+
   srand(time(NULL));
+
   for(int iter_l=0; iter_l < size; iter_l++)
     for(int iter_c=0; iter_c < size/2; iter_c++)
       data[iter_l][iter_c] = rand() % limt;
@@ -27,9 +26,4 @@ void assign(int size, int limt, int **data){
   for(int iter_l=0; iter_l < size; iter_l++)
     for(int iter_c=0; iter_c < size/2; iter_c++)
       data[iter_l][size-1-iter_c] = data[iter_l][iter_c];
-
-  for(int i=0;i<size; i++)
-    for(int j=0; j<size; j++)
-      std::clog<<data[i][j]<<(j+1==size ? '\n' : '\0');
-
 }
