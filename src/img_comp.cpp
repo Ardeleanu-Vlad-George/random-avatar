@@ -1,6 +1,6 @@
 #include "img_comp.hpp"
 
-sf::Image from_mask(int cell_count, int cell_size, int **mask, sf::Color *values, int colr_count){
+sf::Image make_from_mask(int cell_size, int **mask, int cell_count, sf::Color *values, int colr_count){
   sf::Image result;
   result.create(cell_count*cell_size, cell_count*cell_size);
   

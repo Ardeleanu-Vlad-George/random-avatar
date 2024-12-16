@@ -3,6 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 
-sf::Image from_mask(int, int, int**, sf::Color*, int);
+sf::Image make_from_mask(int, int**, int, sf::Color*, int);
 
 #endif//_IMG_COMP_HPP_

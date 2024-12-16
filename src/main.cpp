@@ -12,7 +12,7 @@ int main(){
   mask = create_square(cell_count);
   start_rand();
   populate_rand(cell_count, mask, colr_count);
-  sf::Image avatar = from_mask(cell_count, cell_size, mask, colors, colr_count);
+  sf::Image avatar = make_from_mask(cell_size, mask, cell_count, colors, colr_count);
   avatar.saveToFile("data/img/out.png");
   delete *mask;
   delete mask;
