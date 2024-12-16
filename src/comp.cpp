@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-int** create(int size){
+int** create_square(int size){
   int** result = new int*[size];
   *result = new int[size*size];
   for(int iter=0; iter < size; iter++)
@@ -10,11 +10,13 @@ int** create(int size){
   return result;
 }
 
-void assign(int size, int limt, int **data){
+void start_rand(){
+  srand(time(NULL));
+}
+
+void populate_rand(int size, int **data, int limt){
   for(int iter=0; iter < size*size; iter++)
     iter[*data] = 0;
-
-  srand(time(NULL));
 
   for(int iter_l=0; iter_l < size; iter_l++)
     for(int iter_c=0; iter_c < size/2; iter_c++)

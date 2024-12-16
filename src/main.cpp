@@ -9,8 +9,9 @@ int main(){
   sf::Color *colors;
   colors = read_conf("data/config", cell_count, cell_size, colr_count);
 
-  mask = create(cell_count);
-  assign(cell_count, colr_count, mask);
+  mask = create_square(cell_count);
+  start_rand();
+  populate_rand(cell_count, mask, colr_count);
   sf::Image avatar = from_mask(cell_count, cell_size, mask, colors, colr_count);
   avatar.saveToFile("data/img/out.png");
   delete *mask;
