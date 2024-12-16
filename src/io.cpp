@@ -10,16 +10,14 @@ sf::Color* read_conf(char* file, int& cell_count, int& cell_size, int& colr_coun
   values = new sf::Color[colr_count];
   char hex_code[8];
   int r, g, b;
+  in.getline(hex_code, 8);//consume the '\n' character
   for(int iter=0; iter<colr_count; iter++){
     in.getline(hex_code, 8);
-    std::clog<<'\n'<<hex_code;
     sscanf(hex_code, "#%02x%02x%02x", &r, &g, &b);
-    std::clog<<'\n'<<r;
-    std::clog<<'\n'<<g;
-    std::clog<<'\n'<<b;
     values[iter].r = r;
     values[iter].g = g;
     values[iter].b = b;
+    values[iter].a = '\xff';
   }
   in.close();
   return values;
