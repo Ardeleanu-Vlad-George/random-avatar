@@ -6,7 +6,7 @@ $(TRG): $(OBJ)
 	g++ -o $@ $^ -lsfml-graphics -lsfml-system
 
 $(OBJ): obj/%.o : src/%.cpp
-	g++ -g -c -o $@ $^ -I inc/
+	g++ -std=c++98 -c -o $@ $^ -I inc/
 
 clean:
 	rm $(OBJ) $(TRG)
